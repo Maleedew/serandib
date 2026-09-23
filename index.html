@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Serendib Trails — Sri Lanka, Planned Properly</title>
+<meta name="description" content="Bespoke Sri Lanka trip planning. Spin an interactive relief map, tap the places you want, and put together a real itinerary in minutes." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/sections.css" />
+</head>
+<body>
+
+<!-- ============ SVG ICON SPRITE ============ -->
+<svg style="display:none" aria-hidden="true">
+<defs>
+  <symbol id="icon-rock" viewBox="0 0 48 48"><path d="M9 39 L16 15 L23 11 L27 11 L34 16 L39 39 Z"/><path d="M16 15 L34 16"/><rect x="20" y="6" width="7" height="5"/><path d="M9 39 L39 39"/></symbol>
+  <symbol id="icon-temple" viewBox="0 0 48 48"><line x1="24" y1="4" x2="24" y2="11"/><circle cx="24" cy="16" r="5"/><path d="M11 27 L24 16 L37 27"/><rect x="13" y="27" width="22" height="12"/><line x1="9" y1="39" x2="39" y2="39"/></symbol>
+  <symbol id="icon-bridge" viewBox="0 0 48 48"><path d="M31 22 L37 10 L42 22"/><path d="M4 32 A4 4 0 0 1 12 32 A4 4 0 0 1 20 32 A4 4 0 0 1 28 32 A4 4 0 0 1 36 32 A4 4 0 0 1 44 32"/><line x1="2" y1="36" x2="46" y2="36"/></symbol>
+  <symbol id="icon-fort" viewBox="0 0 48 48"><path d="M6 39 L6 24 L10 24 L10 20 L14 20 L14 24 L18 24 L18 20 L22 20 L22 24 L26 24 L26 39"/><rect x="33" y="15" width="6" height="20"/><path d="M32 15 L39 15 L35.5 9 Z"/><line x1="4" y1="39" x2="42" y2="39"/></symbol>
+  <symbol id="icon-whale" viewBox="0 0 48 48"><path d="M24 8 C 12 12, 7 24, 5 33 C 12 29, 16 27, 20 29 C 17 21, 21 13, 24 8 Z"/><path d="M24 8 C 36 12, 41 24, 43 33 C 36 29, 32 27, 28 29 C 31 21, 27 13, 24 8 Z"/></symbol>
+  <symbol id="icon-paw" viewBox="0 0 48 48"><circle cx="12" cy="18" r="3.4"/><circle cx="20" cy="10" r="3.4"/><circle cx="28" cy="10" r="3.4"/><circle cx="36" cy="18" r="3.4"/><ellipse cx="24" cy="31" rx="9" ry="7"/></symbol>
+  <symbol id="icon-leaf" viewBox="0 0 48 48"><path d="M24 6 C 35 14, 35 30, 24 42 C 13 30, 13 14, 24 6 Z"/><path d="M24 10 L24 38"/><path d="M24 17 L18 13 M24 17 L30 13 M24 25 L17 22 M24 25 L31 22 M24 33 L18 31 M24 33 L30 31"/></symbol>
+  <symbol id="icon-anchor" viewBox="0 0 48 48"><circle cx="24" cy="9" r="3"/><line x1="24" y1="12" x2="24" y2="35"/><line x1="16" y1="18" x2="32" y2="18"/><path d="M11 25 Q11 38 24 38 Q37 38 37 25"/><path d="M11 25 L15 21 M11 25 L7 21"/><path d="M37 25 L33 21 M37 25 L41 21"/></symbol>
+  <symbol id="icon-stupa" viewBox="0 0 48 48"><path d="M12 29 A12 12 0 0 1 36 29 Z"/><rect x="8" y="29" width="32" height="4"/><rect x="12" y="33" width="24" height="4"/><line x1="24" y1="17" x2="24" y2="6"/><circle cx="24" cy="4.5" r="1.4"/></symbol>
+  <symbol id="icon-statue" viewBox="0 0 48 48"><circle cx="24" cy="12" r="5"/><path d="M14 35 Q14 20 24 20 Q34 20 34 35 Z"/><line x1="10" y1="35" x2="38" y2="35"/></symbol>
+  <symbol id="icon-river" viewBox="0 0 48 48"><path d="M4 15 Q10 9 16 15 T28 15 T40 15"/><path d="M4 24 Q10 18 16 24 T28 24 T40 24"/><path d="M4 33 Q10 27 16 33 T28 33 T40 33"/></symbol>
+  <symbol id="icon-surf" viewBox="0 0 48 48"><path d="M15 33 C 10 24, 14 12, 25 6 C 30 15, 28 28, 15 33 Z"/><line x1="15" y1="33" x2="10" y2="40"/><path d="M4 40 Q12 35 20 40 T36 40"/></symbol>
+  <symbol id="icon-cave" viewBox="0 0 48 48"><path d="M8 39 L8 23 A16 16 0 0 1 40 23 L40 39"/><circle cx="18" cy="32" r="1.6"/><circle cx="24" cy="29" r="1.6"/><circle cx="30" cy="32" r="1.6"/><line x1="4" y1="39" x2="44" y2="39"/></symbol>
+  <symbol id="icon-peak" viewBox="0 0 48 48"><path d="M5 39 L19 12 L26 24 L33 9 L43 39 Z"/><path d="M33 9 L29 4 M33 9 L37 5 M33 9 L33 3"/></symbol>
+  <symbol id="icon-palm" viewBox="0 0 48 48"><path d="M24 42 Q22 28 25 18"/><path d="M25 18 L11 9 M25 18 L15 5 M25 18 L25 3 M25 18 L35 5 M25 18 L39 9"/></symbol>
+
+  <symbol id="icon-close" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6"/></symbol>
+  <symbol id="icon-chevron-left" viewBox="0 0 24 24"><path d="M15 5 L8 12 L15 19"/></symbol>
+  <symbol id="icon-chevron-right" viewBox="0 0 24 24"><path d="M9 5 L16 12 L9 19"/></symbol>
+  <symbol id="icon-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="icon-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="icon-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="M15.3 8.7 L10.6 10.6 L8.7 15.3 L13.4 13.4 Z"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="icon-plane" viewBox="0 0 24 24"><path d="M21 3 L3 10.5 L10 12.5 L12 19.5 L14.5 14 L21 3 Z"/><path d="M10 12.5 L21 3"/></symbol>
+  <symbol id="icon-menu-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>
+</defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="siteHeader">
+  <div class="header__inner">
+    <a href="#top" class="brand" aria-label="Serendib Trails, home">
+      <svg class="brand__mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-compass"/></svg>
+      <span class="brand__word">Serendib<em>Trails</em></span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="#map">The Map</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#packages">Journeys</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <button class="btn btn--primary btn--sm" data-open-booking type="button">Start charting</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div class="nav-drawer" id="navDrawer">
+  <nav aria-label="Mobile">
+    <a href="#map">The Map</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#packages">Journeys</a>
+    <a href="#why">Why Us</a>
+    <a href="#testimonials">Logbook</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="btn btn--primary" data-open-booking type="button">Start charting</button>
+</div>
+<div class="nav-scrim" id="navScrim"></div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero__grid">
+      <div class="hero__text">
+        <h1 class="hero__title">Chart your course through Sri Lanka</h1>
+        <p class="hero__desc">Fifteen real places on one interactive relief map. Tap the ones you want, tell us when and with whom, and leave with an itinerary — not another tab full of blog posts.</p>
+        <div class="hero__actions">
+          <button class="btn btn--primary btn--lg" data-open-booking type="button">Start charting</button>
+          <a href="#map" class="btn btn--ghost btn--lg">See the map</a>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <svg class="hero__porthole" viewBox="0 0 520 520">
+          <circle cx="260" cy="260" r="248" class="porthole__ring-outer"/>
+          <circle cx="260" cy="260" r="228" class="porthole__ring-inner"/>
+          <g id="heroIslandGroup" transform="translate(260,260)">
+            <path id="heroIslandPath" class="porthole__island" d=""/>
+          </g>
+          <g id="compassNeedle" transform="translate(260,260)">
+            <g class="needle-spin">
+              <path class="needle__brass" d="M0,-34 L7,0 L0,7 Z"/>
+              <path class="needle__sapphire" d="M0,34 L-7,0 L0,-7 Z"/>
+              <circle r="4.5" class="needle__hub"/>
+            </g>
+          </g>
+          <g class="porthole__ticks">
+            <line x1="260" y1="18" x2="260" y2="34"/>
+            <line x1="260" y1="486" x2="260" y2="502"/>
+            <line x1="18" y1="260" x2="34" y2="260"/>
+            <line x1="486" y1="260" x2="502" y2="260"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about">
+    <div class="about__grid">
+      <p class="about__lead">Serendib Trails is a small planning desk based in Colombo. We're named after the old word for this island — the one that gave English the word "serendipity" — because that's still the best way to describe how most good trips here actually happen.</p>
+      <p class="about__body">We don't run buses of forty people between photo stops. Every itinerary on this site is built by someone who has actually driven the route, and every driver-guide we work with has been doing this for years, not weeks. If you'd rather plan it yourself, the map below has everything you need. If you'd rather hand it to someone, that's what the four steps further down are for.</p>
+    </div>
+  </section>
+
+  <!-- ============ 3D MAP ============ -->
+  <section class="map-section" id="map">
+    <div class="map-section__head">
+      <h2>The island, charted</h2>
+      <p>Drag to spin it, scroll or pinch to zoom, and tap a pin to add that place to your trip.</p>
+    </div>
+
+    <div class="map-wrap">
+      <svg class="map-frame" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true">
+        <rect x="14" y="14" width="972" height="612" class="frame__rect"/>
+        <g class="frame__ticks">
+          <line x1="14" y1="14" x2="14" y2="26"/><text x="14" y="10">82&#176;E</text>
+          <line x1="338" y1="14" x2="338" y2="26"/><text x="338" y="12">81&#176;E</text>
+          <line x1="662" y1="14" x2="662" y2="26"/><text x="662" y="12">80&#176;E</text>
+          <line x1="986" y1="14" x2="986" y2="26"/><text x="986" y="12" text-anchor="end">79&#176;E</text>
+          <line x1="14" y1="14" x2="26" y2="14"/><text x="32" y="27">10&#176;N</text>
+          <line x1="14" y1="167" x2="26" y2="167"/><text x="30" y="172">9&#176;N</text>
+          <line x1="14" y1="320" x2="26" y2="320"/><text x="30" y="325">8&#176;N</text>
+          <line x1="14" y1="473" x2="26" y2="473"/><text x="30" y="478">7&#176;N</text>
+          <line x1="14" y1="626" x2="26" y2="626"/><text x="30" y="621">6&#176;N</text>
+        </g>
+        <g class="frame__rose" transform="translate(936,566)">
+          <circle r="34"/>
+          <line x1="0" y1="-26" x2="0" y2="26"/><line x1="-26" y1="0" x2="26" y2="0"/>
+          <path d="M0,-20 L5,0 L0,5 L-5,0 Z"/>
+          <text y="-30">N</text>
+        </g>
+      </svg>
+      <canvas id="mapCanvas"></canvas>
+      <div class="map-tooltip" id="mapTooltip" hidden></div>
+      <p class="map-hint" id="mapHint">Drag to rotate</p>
+    </div>
+
+    <div class="map-list" id="mapList" aria-label="Destination list"></div>
+  </section>
+
+  <!-- ============ DESTINATIONS ============ -->
+  <section class="destinations" id="destinations">
+    <div class="destinations__head">
+      <h2>Fifteen places worth the detour</h2>
+      <p>Tap a filter to narrow it down, or tap "Add" on anything that catches your eye — it'll carry straight into your trip plan.</p>
+    </div>
+    <div class="filter-tabs" id="filterTabs" role="tablist" aria-label="Filter by region"></div>
+    <div class="dest-grid" id="destGrid"></div>
+  </section>
+
+  <!-- ============ TAP & TRAVEL ============ -->
+  <section class="tap-travel">
+    <div class="tap-travel__inner">
+      <h2>Tap and travel</h2>
+      <p class="tap-travel__lead">Four steps, most people finish in under two minutes.</p>
+      <ol class="tt-steps">
+        <li class="tt-step"><span class="tt-step__num">1</span><span class="tt-step__title">Choose places</span><span class="tt-step__text">From the map or the list above.</span></li>
+        <li class="tt-step"><span class="tt-step__num">2</span><span class="tt-step__title">Pick your dates</span><span class="tt-step__text">Even a rough window works.</span></li>
+        <li class="tt-step"><span class="tt-step__num">3</span><span class="tt-step__title">Say who's coming</span><span class="tt-step__text">Adults, children, group size.</span></li>
+        <li class="tt-step"><span class="tt-step__num">4</span><span class="tt-step__title">Send it to us</span><span class="tt-step__text">A planner replies within a day.</span></li>
+      </ol>
+      <button class="btn btn--primary btn--lg" data-open-booking type="button">Start charting</button>
+    </div>
+  </section>
+
+  <!-- ============ PACKAGES ============ -->
+  <section class="packages" id="packages">
+    <div class="packages__head">
+      <h2>Three ways to travel</h2>
+      <p>Every trip is customised, but these are the three shapes most itineraries take.</p>
+    </div>
+    <div class="package-grid" id="packageGrid"></div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="features" id="why">
+    <div class="features__head">
+      <h2>What every trip includes</h2>
+    </div>
+    <div class="feature-grid" id="featureGrid"></div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="logbook" id="testimonials">
+    <div class="logbook__head">
+      <h2>Notes from the logbook</h2>
+      <div class="logbook__nav">
+        <button id="logPrev" aria-label="Previous entry"><svg viewBox="0 0 24 24"><use href="#icon-chevron-left"/></svg></button>
+        <button id="logNext" aria-label="Next entry"><svg viewBox="0 0 24 24"><use href="#icon-chevron-right"/></svg></button>
+      </div>
+    </div>
+    <div class="logbook__track" id="logTrack"></div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta">
+    <div class="cta__inner">
+      <h2>Ready to plot your trip?</h2>
+      <p>No payment, no account — just tell us the shape of the trip you want.</p>
+      <button class="btn btn--primary btn--lg" data-open-booking type="button">Start charting</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="contact">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <a href="#top" class="brand brand--light">
+        <svg class="brand__mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-compass"/></svg>
+        <span class="brand__word">Serendib<em>Trails</em></span>
+      </a>
+      <p>A small planning desk in Colombo, working with driver-guides across the island.</p>
+    </div>
+    <div class="footer__col">
+      <h3>Explore</h3>
+      <a href="#map">The map</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#packages">Journeys</a>
+      <a href="#testimonials">Logbook</a>
+    </div>
+    <div class="footer__col">
+      <h3>Contact</h3>
+      <a href="mailto:hello@serendibtrails.example">hello@serendibtrails.example</a>
+      <a href="tel:+94112345678">+94 11 234 5678</a>
+      <span>140 Galle Road, Colombo 03</span>
+    </div>
+    <div class="footer__col footer__col--social">
+      <h3>Follow</h3>
+      <div class="social-row">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>&copy; <span id="year"></span> Serendib Trails. All place data is indicative — always reconfirm before you travel.</span>
+  </div>
+</footer>
+
+<!-- ============ TAP & TRAVEL FAB ============ -->
+<button class="fab" id="fabBtn" data-open-booking type="button" aria-label="Open trip planner">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-plane"/></svg>
+  <span>Tap &amp; Travel</span>
+  <span class="fab__badge" id="fabBadge" hidden>0</span>
+</button>
+
+<!-- ============ BOOKING PANEL ============ -->
+<div class="booking-overlay" id="bookingOverlay">
+  <div class="booking-panel" id="bookingPanel" role="dialog" aria-modal="true" aria-label="Trip planner">
+
+    <div class="booking-panel__header">
+      <div class="booking-steps" id="bookingSteps">
+        <span class="bstep is-active" data-step="1"><i>1</i>Places</span>
+        <span class="bstep" data-step="2"><i>2</i>Dates</span>
+        <span class="bstep" data-step="3"><i>3</i>Travellers</span>
+        <span class="bstep" data-step="4"><i>4</i>Journey</span>
+        <span class="bstep" data-step="5"><i>5</i>Details</span>
+      </div>
+      <button class="booking-panel__close" id="bookingClose" aria-label="Close"><svg viewBox="0 0 24 24"><use href="#icon-close"/></svg></button>
+    </div>
+
+    <div class="booking-panel__body" id="bookingBody">
+
+      <div class="bpanel" data-step="1">
+        <h3>Where do you want to go?</h3>
+        <p class="bpanel__hint">Tap as many as you like — you can change this later.</p>
+        <div class="chip-grid" id="chipGrid"></div>
+      </div>
+
+      <div class="bpanel" data-step="2">
+        <h3>When are you thinking?</h3>
+        <p class="bpanel__hint">Pick a start date and roughly how long.</p>
+        <div class="date-strip" id="dateStrip"></div>
+        <div class="length-row">
+          <span class="field__label">Trip length</span>
+          <div class="pill-row" id="lengthRow"></div>
+        </div>
+      </div>
+
+      <div class="bpanel" data-step="3">
+        <h3>Who's coming?</h3>
+        <div class="stepper-row">
+          <div class="stepper">
+            <span class="stepper__label">Adults</span>
+            <div class="stepper__controls">
+              <button data-stepper="adults" data-dir="-1" aria-label="Decrease adults"><svg viewBox="0 0 24 24"><use href="#icon-minus"/></svg></button>
+              <span class="stepper__value" id="adultsValue">2</span>
+              <button data-stepper="adults" data-dir="1" aria-label="Increase adults"><svg viewBox="0 0 24 24"><use href="#icon-plus"/></svg></button>
+            </div>
+          </div>
+          <div class="stepper">
+            <span class="stepper__label">Children</span>
+            <div class="stepper__controls">
+              <button data-stepper="children" data-dir="-1" aria-label="Decrease children"><svg viewBox="0 0 24 24"><use href="#icon-minus"/></svg></button>
+              <span class="stepper__value" id="childrenValue">0</span>
+              <button data-stepper="children" data-dir="1" aria-label="Increase children"><svg viewBox="0 0 24 24"><use href="#icon-plus"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bpanel" data-step="4">
+        <h3>Pick a way to travel</h3>
+        <div class="journey-grid" id="journeyGrid"></div>
+      </div>
+
+      <div class="bpanel" data-step="5">
+        <h3>Last thing — how do we reach you?</h3>
+        <div class="field"><label class="field__label" for="fName">Name</label><input class="field__input" id="fName" type="text" autocomplete="name" /></div>
+        <div class="field"><label class="field__label" for="fEmail">Email</label><input class="field__input" id="fEmail" type="email" autocomplete="email" /></div>
+        <div class="field"><label class="field__label" for="fPhone">Phone <span>(optional)</span></label><input class="field__input" id="fPhone" type="tel" autocomplete="tel" /></div>
+        <div class="field"><label class="field__label" for="fNotes">Anything else? <span>(optional)</span></label><textarea class="field__input" id="fNotes" rows="2"></textarea></div>
+      </div>
+
+      <div class="bpanel bpanel--success" data-step="success">
+        <svg class="stamp" viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="86" class="stamp__ring-outer"/>
+          <circle cx="100" cy="100" r="72" class="stamp__ring-inner"/>
+          <path id="stampCirclePath" d="M100,100 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0" fill="none"/>
+          <text class="stamp__arctext"><textPath href="#stampCirclePath" startOffset="2%">SERENDIB TRAILS</textPath></text>
+          <text x="100" y="94" text-anchor="middle" class="stamp__word">LOGGED</text>
+          <text x="100" y="118" text-anchor="middle" class="stamp__ref" id="stampRef">SRD-000000</text>
+        </svg>
+        <h3>Your trip is logged</h3>
+        <p>A planner will look over what you've chosen and reply by email — usually within a day — with a proper itinerary and a quote. No payment has been taken.</p>
+        <button class="btn btn--ghost" id="bookingReset" type="button">Plan another trip</button>
+      </div>
+
+    </div>
+
+    <div class="booking-panel__footer" id="bookingFooter">
+      <div class="booking-summary" id="bookingSummary"></div>
+      <div class="booking-nav">
+        <button class="btn btn--ghost" id="bookingBack" type="button">Back</button>
+        <button class="btn btn--primary" id="bookingNext" type="button">Next</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/map3d.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
